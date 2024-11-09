@@ -10,7 +10,7 @@ export function getAssetById(id){
     const asset = assets.find(a => a.id === id);
     // if function to return details if asset found and if not log an error message 
     if (asset) { 
-        return `${asset.name}, it is a ${asset.type} priced at ${asset.price} and the quantity is ${asset.quantity}`
+        return asset
     } else {
         console.log("error: asset could not be found");
         return null
