@@ -14,18 +14,21 @@ console.log(`Portfolio value is ${portfolioValue}`); //displays total portfolio 
 function displayPortfolio (assets) {
     const portfolioAllocation = getPortfolioAllocation (assets);
     portfolioAllocation.forEach(asset => {
-        console.log(`Asset ${asset.name} represents ${asset.allocationPercentage}% of the portfolio`)
+        console.log(`Asset ${asset.name} represents ${asset.assetPercentage}% of the portfolio`)
     }); //displays allocation of each asset 
 }
-
+console.log("Initial portfolio allocation:");
 displayPortfolio(assets)
 // create new transactions using the default class
 const newtransaction1 = new Transaction (1, "sell", 3 ); 
+console.log(`Sell 3 units of asset ID 1`);
 const newtransaction2 = new Transaction (2, "buy", 15 ); 
-
+console.log(`Buy 15 units of asset ID 2`);
 //update after transactions
 
-calculatePortfolioValue(assets)
-displayPortfolio(assets)
+
+let updatedPortfolio = calculatePortfolioValue(assets);
+console.log(`Updated portfolio value after the transactions is $${updatedPortfolio}`)
+displayPortfolio(assets); 
 
 
